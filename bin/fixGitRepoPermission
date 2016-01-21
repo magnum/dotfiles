@@ -1,0 +1,5 @@
+#!/bin/bash
+
+chgrp -R external .git
+chmod -R g+w .git
+find .git -type d -exec chmod g+s '{}' \;

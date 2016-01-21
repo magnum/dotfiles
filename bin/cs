@@ -1,0 +1,2 @@
+#!/bin/sh
+java -jar /Users/magnum/.conscript/sbt-launch.jar @/Users/magnum/.conscript/n8han/conscript/cs/launchconfig "$@"

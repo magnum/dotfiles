@@ -1,0 +1,67 @@
+[user]
+	name = Antonio Molinari
+	email = molinari@incode.it
+[github]
+	user = magnum
+	token = c07dbe54eafbe1620828fde02c13d8d7
+[core]
+	excludesfile = /Users/magnum/.gitignore
+	filemode = false
+	editor = /usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = auto
+[alias]
+	s = status -sb
+	d = diff
+	wd = diff --word-diff
+	a = add
+	cm = commit
+	ca = commit -a
+	co = checkout
+	rb = rebase
+	br = branch
+	ph = push
+	pl = pull
+	l = log --oneline --decorate
+	f = fetch
+	am = commit -a --amend
+	delete-remote = !sh -c \"git push \\$0 \\:\\$1\"
+	r = remote
+	rv = remote -v
+	aliases = git config --global alias.rv    remote
+	
+	report = "log --author=molinari@incode.it --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset' --no-merges"
+	report-csv = "log --author=molinari@incode.it --since='2 sunday ago' --until='1 sunday ago' --format='\"%ci\",\"%s\"' --no-merges"
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	cam = commit -a -m
+	undo = reset --hard HEAD^
+[push]
+	default = matching
+
+
+#http://tbaggery.com/2010/10/24/reduce-your-rails-schema-conflicts.html
+[merge "railsschema"]
+	name = newer Rails schema version
+	driver = "ruby -e '\n\
+		system %(git), %(merge-file), %(--marker-size=%L), %(%A), %(%O), %(%B)\n\
+		b = File.read(%(%A))\n\
+		b.sub!(/^<+ .*\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n=+\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n>+ .*/) do\n\
+		  %(ActiveRecord::Schema.define(:version => #{[$1, $2].max}) do)\n\
+		end\n\
+		File.open(%(%A), %(w)) {|f| f.write(b)}\n\
+		exit 1 if b.include?(%(<)*%L)'"
+[log]
+	decorate = short
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+
+
+[merge]
+  ff = false

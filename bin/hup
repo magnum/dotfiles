@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $1  ]; then
+	cp /etc/hosts.default /etc/hosts
+        cat /etc/hosts.$1 >> /etc/hosts
+	dscacheutil -flushcache
+else
+        echo "SINTASSI: hostsChange [suffisso hosts.] "
+        exit 127
+fi
+

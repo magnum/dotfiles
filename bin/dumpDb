@@ -1,0 +1,28 @@
+#!/bin/sh
+
+DIR="_database"
+MyUSER="root"
+MyPASS="root"
+MyHOST="127.0.0.1"
+MyPORT="3306"
+MYSQLDUMP="$(which mysqldump)"
+GZIP="$(which gzip)"
+NOW="$(date +"%Y-%m-%d")"
+#NOW="$(date +"%Y-%m-%d_%H-%M-%S")"
+
+if [ $1 ]; then
+  # create directory if it does not exist
+  if ( !( test -d "$DIR" ) ); then
+    #echo creating "$DIR"
+    mkdir "$DIR" ;
+  fi
+  DB=$1
+  FILE="$DIR/$1.gz"
+  if [ $2 ]; then
+    FILE="$DIR/$1_$NOW ($2).gz"
+  fi
+  $MYSQLDUMP -u $MyUSER -h $MyHOST -P$MyPORT  $DB | $GZIP -9 > $FILE
+  echo "SAVED DB > $FILE"
+else 
+  echo "Sintassi dumpDb [database_name]";
+fi

@@ -81,6 +81,7 @@ alias nginx.logs.default-ssl.access='tail -250f /usr/local/etc/nginx/logs/defaul
 alias nginx.logs.phpmyadmin.error='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.error.log'
 alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.access.log'
 
+alias tmux="TERM=screen-256color-bce tmux"
 
 # SCALA
 PATH=$PATH:~/bin

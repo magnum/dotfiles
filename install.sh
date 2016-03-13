@@ -40,7 +40,7 @@ now=`date +%Y-%m-%d-%H:%M:%S`
 # -----------------------------------------------------------------
 
 file_paths=$dir/*
-file_name_excluded="settings"
+file_name_excluded="settings Brewfile install.sh"
 message "Remove old files and create new files symlinked..."
 for file_path in $file_paths
 do
@@ -148,3 +148,5 @@ ln -s $HOME/settings/profile_credentials $HOME/.profile_credentials
 
 ln -s $HOME/settings/transmit_Favorites ~/Library/Application\ Support/Transmit/Favorites
 ln -s $HOME/settings/sequelpro_Favorites.plist ~/Library/Application\ Support/Sequel\ Pro/Data/Favorites.plist
+
+ln -s $HOME/settings/magnum.zsh-theme $HOME/.oh-my-zsh/themes/magnum.zsh-theme

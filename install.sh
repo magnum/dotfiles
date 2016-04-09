@@ -110,6 +110,8 @@ if type "rbenv" > /dev/null; then
     ok
 fi
 
+ gem install tmuxinator
+
 
 # -----------------------------------------------------------------
 # Install Pow

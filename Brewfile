@@ -29,6 +29,9 @@ brew 'zsh'
 # Install software
 # -----------------------------------------------
 
+brew 'dnsmasq'
+
+
 # Browsers
 #cask 'google-chrome'
 #cask 'firefox'

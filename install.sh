@@ -145,10 +145,28 @@ fi
 # -----------------------------------------------------------------
 # Settings and credentials
 # -----------------------------------------------------------------
+
+# ssh
 ln -s $HOME/settings/ssh $HOME/.ssh
 ln -s $HOME/settings/profile_credentials $HOME/.profile_credentials
 
+#apache
+sudo ln -s $HOME/settings/apache2 /etc/apache2
+
+# transmit
 ln -s $HOME/settings/transmit_Favorites ~/Library/Application\ Support/Transmit/Favorites
+
+# sequelpro
 ln -s $HOME/settings/sequelpro_Favorites.plist ~/Library/Application\ Support/Sequel\ Pro/Data/Favorites.plist
 
+# oh-my-zsh
 ln -s $HOME/settings/magnum.zsh-theme $HOME/.oh-my-zsh/themes/magnum.zsh-theme
+
+# /etc/resolver
+sudo ln -s $HOME/settings/resolver /etc/resolver
+
+# dnsmasq
+# https://passingcuriosity.com/2013/dnsmasq-dev-osx/
+sudo ln -s $HOME/settings/dnsmasq.conf /usr/local/etc/dnsmasq.conf
+sudo launchctl stop homebrew.mxcl.dnsmasq
+sudo launchctl start homebrew.mxcl.dnsmasq

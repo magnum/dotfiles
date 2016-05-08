@@ -18,7 +18,8 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # PHP
 #export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
-export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # AMAZON EC2
 export EC2_HOME=$HOME/bin/ec2-api-tools

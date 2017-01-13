@@ -37,8 +37,8 @@ set tabstop=2
 set shiftwidth=2
 
 " Invisible charater
-" set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
-" set list
+set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
+set list
 
 " Numbers
 set numberwidth=3

@@ -9,7 +9,10 @@ if which antigen &> /dev/null; then
   antigen bundle zsh-users/zsh-history-substring-search
   antigen bundle zsh-users/zsh-autosuggestions
   antigen bundle psprint/history-search-multi-word
+  antigen bundle "greymd/docker-zsh-completion"
+
   antigen theme mgee/slimline
+
   antigen apply
  
   # https://github.com/zdharma/history-search-multi-word/

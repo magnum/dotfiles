@@ -23,6 +23,9 @@ fi
 
 
 # PYTHON
+export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+export PATH="$PATH:$PYTHON_BIN_PATH"
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
@@ -52,15 +55,14 @@ fi
 
 
 # TRANSFER
-transfer() {
-    # write to output to tmpfile because of progress bar
-    tmpfile=$( mktemp -t transferXXX )
-    curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
-    cat $tmpfile;
-    rm -f $tmpfile;
-}
-
-alias transfer=transfer
+#transfer() {
+#    # write to output to tmpfile because of progress bar
+#    tmpfile=$( mktemp -t transferXXX )
+#    curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
+#    cat $tmpfile;
+#    rm -f $tmpfile;
+#}
+#alias transfer=transfer
 
 
 # GIT
@@ -69,7 +71,20 @@ export GIT_CEILING_DIRECTORIES='/Users/magnum'
 
 # TMUX
 alias tmux="TERM=screen-256color-bce tmux"
-
+export DISABLE_AUTO_TITLE="true"
 
 # SCALA
 PATH=$PATH:~/bin
+
+
+# ANDROID
+ANDROID_HOME=/Users/magnum/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+
+# APPLE 
+export DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer  
+
+
+# OTHER
+alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"

@@ -16,7 +16,7 @@ if which rbenv &> /dev/null; then
 fi
 
 
-# Brew
+# BREW
 if which brew &> /dev/null; then
   export PATH="/usr/local/sbin:$PATH"
 fi
@@ -28,7 +28,7 @@ export PATH="$PATH:$PYTHON_BIN_PATH"
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
 
 
 # JAVA
@@ -38,11 +38,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # AMAZON EC2
 export EC2_HOME=$HOME/bin/ec2-api-tools
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
-
-
-# RBENV
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 
 # NODE
@@ -73,8 +68,6 @@ export GIT_CEILING_DIRECTORIES='/Users/magnum'
 alias tmux="TERM=screen-256color-bce tmux"
 export DISABLE_AUTO_TITLE="true"
 
-# SCALA
-PATH=$PATH:~/bin
 
 
 # ANDROID
@@ -83,8 +76,14 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 
 # APPLE 
-export DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer  
-
+#export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer  
+export DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer
 
 # OTHER
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
+
+
+# GCLOUD
+source $HOME/google-cloud-sdk/completion.zsh.inc
+source $HOME/google-cloud-sdk/path.zsh.inc
+

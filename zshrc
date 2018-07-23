@@ -1,10 +1,11 @@
 # Antigen
 source "$HOME/antigen.zsh"
 
+#if false; then
 if which antigen &> /dev/null; then
   antigen use oh-my-zsh
   antigen bundle git
-  antigen bundle heroku
+  # antigen bundle heroku
   antigen bundle command-not-found
   antigen bundle zsh-users/zsh-history-substring-search
   antigen bundle zsh-users/zsh-autosuggestions
@@ -12,7 +13,9 @@ if which antigen &> /dev/null; then
   antigen bundle "greymd/docker-zsh-completion"
 
   antigen theme mgee/slimline
-
+  #antigen theme spaceship
+  #antigen theme sindresorhus/pure
+  
   antigen apply
  
   # https://github.com/zdharma/history-search-multi-word/
@@ -32,3 +35,10 @@ fi
 
 # .profile
 source $HOME/.profile
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

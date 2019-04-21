@@ -1,3 +1,8 @@
+
+# powerleven9k prompt
+# https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+
 # Antigen
 source "$HOME/antigen.zsh"
 
@@ -11,10 +16,20 @@ if which antigen &> /dev/null; then
   antigen bundle zsh-users/zsh-autosuggestions
   antigen bundle psprint/history-search-multi-word
   antigen bundle "greymd/docker-zsh-completion"
-
-  antigen theme mgee/slimline
+  antigen bundle zsh-users/zsh-completions
+  
+  # pure theme	
+  #antigen bundle mafredri/zsh-async  
+  #antigen bundle sindresorhus/pure
+  
+  antigen theme robbyrussell/oh-my-zsh themes/magnum
+  #antigen theme bhilburn/powerlevel9k powerlevel9k
+  #antigen theme robbyrussell/oh-my-zsh themes/simple   
+  #antigen theme mgee/slimline
   #antigen theme spaceship
   #antigen theme sindresorhus/pure
+  #antigen theme robbyrussell
+  #antigen theme denysdovhan/spaceship-prompt  
   
   antigen apply
  
@@ -42,3 +57,5 @@ source $HOME/.profile
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn

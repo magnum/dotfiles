@@ -12,7 +12,7 @@ if which antigen &> /dev/null; then
   antigen bundle git
   # antigen bundle heroku
   antigen bundle command-not-found
-  antigen bundle zsh-users/zsh-history-substring-search
+  #antigen bundle zsh-users/zsh-history-substring-search
   antigen bundle zsh-users/zsh-autosuggestions
   antigen bundle psprint/history-search-multi-word
   antigen bundle "greymd/docker-zsh-completion"
@@ -49,7 +49,7 @@ if which antigen &> /dev/null; then
 fi
 
 # .profile
-source $HOME/.profile
+#source $HOME/.profile
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -59,3 +59,7 @@ source $HOME/.profile
 [[ -f /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/magnum/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/magnum/.sdkman"
+[[ -s "/Users/magnum/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnum/.sdkman/bin/sdkman-init.sh"

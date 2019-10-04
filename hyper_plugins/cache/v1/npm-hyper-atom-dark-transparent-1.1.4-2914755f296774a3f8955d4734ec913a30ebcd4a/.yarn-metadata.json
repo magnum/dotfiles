@@ -1,0 +1,38 @@
+{
+  "manifest": {
+    "name": "hyper-atom-dark-transparent",
+    "version": "1.1.4",
+    "description": "Hyper theme based on the hyperterm-atom-dark, but with transparency.",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/simonmeusel/hyperterm-atom-dark"
+    },
+    "keywords": [
+      "hyper",
+      "hyper-theme",
+      "colors",
+      "transparent",
+      "atom"
+    ],
+    "author": {
+      "name": "Simon Meusel"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/Users/magnum/.hyper_plugins/cache/v1/npm-hyper-atom-dark-transparent-1.1.4-2914755f296774a3f8955d4734ec913a30ebcd4a/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Atom One Dark for Hyper\n\n[Hyper](https://hyper.is) theme based on [the Atom One Dark theme](https://github.com/atom/one-dark-syntax). Forked from @mdo's [hyperterm-atom-dark](https://github.com/mdo/hyperterm-atom-dark) and modified by @simonmeusel.\n\n![Screenshot with Background](http://i.imgur.com/Y8ihe51.png)\n\nColor scheme:\n![Screenshot with tabs](https://cloud.githubusercontent.com/assets/98681/16899206/f644c080-4baf-11e6-890d-fd5c628c7991.png)\n\n### Install\n\n1. Open HyperTerm's preferences with `Cmd+,` (or manually at `~/.hyper.js`) with your editor.\n2. Update your list of plugins to include `hyper-atom-dark-transparent`, like so:\n  \n  ```js\nplugins: [\n  'hyper-atom-dark-transparent'\n],\n```\n3. Fully reload HyperTerm (`Cmd+Shift+R`), and tada!\n\n### License\n\nMIT\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-atom-dark-transparent/-/hyper-atom-dark-transparent-1.1.4.tgz#2914755f296774a3f8955d4734ec913a30ebcd4a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-atom-dark-transparent/-/hyper-atom-dark-transparent-1.1.4.tgz",
+    "hash": "2914755f296774a3f8955d4734ec913a30ebcd4a",
+    "registry": "npm",
+    "packageName": "hyper-atom-dark-transparent"
+  },
+  "registry": "npm",
+  "hash": "2914755f296774a3f8955d4734ec913a30ebcd4a"
+}

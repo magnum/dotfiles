@@ -41,6 +41,7 @@
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	cam = commit -a -m
 	undo = reset --hard HEAD^
+	ignore = "{ curl -L -s https://www.gitignore.io/api/ >> .gitignore ;}; gi"
 [push]
 	default = matching
 
@@ -65,3 +66,5 @@
 
 [merge]
   ff = false
+[credential]
+	helper = store

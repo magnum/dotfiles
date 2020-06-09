@@ -1,2 +1,4 @@
 tmux/resurrect
 tmux/plugins/
+
+hyper_plugins/cache/

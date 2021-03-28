@@ -1,7 +1,6 @@
-
 # General conf
 export PROJECTS_DIR=$HOME/projects
-export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Applications/MAMP/bin/php/php7.3.24/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$HOME/bin"
 export EDITOR="vim"
 #BASH
@@ -93,7 +92,18 @@ export SDKMAN_DIR="/Users/magnum/.sdkman"
 #COMPOSER
 alias composer="php /usr/local/bin/composer.phar"
 export COMPOSER_MEMORY_LIMIT=-1 
-#ALIASES
-alias php='/Applications/MAMP/bin/php/php7.3.21/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/php7.3.21.ini"'
-alias pear='/Applications/MAMP/bin/php/php7.3.21/bin/pear'
-alias pecl='/Applications/MAMP/bin/php/php7.3.21/bin/pecl'
+#MAMP
+MAMP_PHP_VERSION=php5.4.45
+#MAMP_PHP_VERSION=php7.3.21
+MAMP_PHP_DIR=/Applications/MAMP/bin/php/$MAMP_PHP_VERSION
+alias php="$MAMP_PHP_DIR/bin/php -c '/Library/Application Support/appsolute/MAMP PRO/conf/$MAMP_PHP_VERSION.ini'"
+alias pear="$MAMP_PHP_DIR/bin/pear"
+alias pecl="$MAMP_PHP_DIR/bin/pecl"
+alias php='/Applications/MAMP/bin/php/php7.3.24/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/php7.3.24.ini"'
+alias composer='/Applications/MAMP/bin/php/composer'
+alias php-config='/Applications/MAMP/bin/php/php7.3.24/bin/php-config'
+alias phpdbg='/Applications/MAMP/bin/php/php7.3.24/bin/phpdbg'
+alias phpize='/Applications/MAMP/bin/php/php7.3.24/bin/phpize'
+alias pear='/Applications/MAMP/bin/php/php7.3.24/bin/pear'
+alias peardev='/Applications/MAMP/bin/php/php7.3.24/bin/peardev'
+alias pecl='/Applications/MAMP/bin/php/php7.3.24/bin/pecl'

@@ -69,3 +69,10 @@ if [ -f '/Users/magnum/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/magnum/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/magnum/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/magnum/google-cloud-sdk/completion.zsh.inc'; fi
+
+#PCSC
+export PATH="/usr/local/opt/pcsc-lite/bin:$PATH"
+export PATH="/usr/local/opt/pcsc-lite/sbin:$PATH"
+export LDFLAGS="-L/usr/local/opt/pcsc-lite/lib"
+export CPPFLAGS="-I/usr/local/opt/pcsc-lite/include"
+export PKG_CONFIG_PATH="/usr/local/opt/pcsc-lite/lib/pkgconfig"

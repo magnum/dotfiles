@@ -1,4 +1,3 @@
-
 # General conf
 export PROJECTS_DIR=$HOME/projects
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -17,6 +16,9 @@ fi
 if which brew &> /dev/null; then
   export PATH="/usr/local/sbin:$PATH"
 fi
+# ibrew for x86 version
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
 # PYTHON
 export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 export PATH="$PATH:$PYTHON_BIN_PATH"
@@ -93,7 +95,13 @@ export SDKMAN_DIR="/Users/magnum/.sdkman"
 #COMPOSER
 alias composer="php /usr/local/bin/composer.phar"
 export COMPOSER_MEMORY_LIMIT=-1 
-#ALIASES
-alias php='/Applications/MAMP/bin/php/php7.3.21/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/php7.3.21.ini"'
-alias pear='/Applications/MAMP/bin/php/php7.3.21/bin/pear'
-alias pecl='/Applications/MAMP/bin/php/php7.3.21/bin/pecl'
+#MAMP
+MAMP_PHP_VERSION=php5.4.45
+#MAMP_PHP_VERSION=php7.3.21
+MAMP_PHP_DIR=/Applications/MAMP/bin/php/$MAMP_PHP_VERSION
+alias php="$MAMP_PHP_DIR/bin/php -c '/Library/Application Support/appsolute/MAMP PRO/conf/$MAMP_PHP_VERSION.ini'"
+alias pear="$MAMP_PHP_DIR/bin/pear"
+alias pecl="$MAMP_PHP_DIR/bin/pecl"
+alias php='/Applications/MAMP/bin/php/php7.3.24/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/php7.3.24.ini"'
+alias pear='/Applications/MAMP/bin/php/php7.3.24/bin/pear'
+alias pecl='/Applications/MAMP/bin/php/php7.3.24/bin/pecl'

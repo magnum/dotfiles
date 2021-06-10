@@ -4,7 +4,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$HOME/bin"
 export EDITOR="vim"
 #BASH
-export PS1='\u@\H:\w$ '
+#export PS1='\u@\H:\w$ '
 # CREDENTIALS
 [ -f "$HOME/.profile_credentials" ] && source $HOME/.profile_credentials || echo "warning, .profile_credentials with secure credentials not found"
 # Rbenv

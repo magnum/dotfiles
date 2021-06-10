@@ -1,4 +1,4 @@
-source ~/.profile
+#source ~/.profile
 
 # Setting PATH for Python 3.7
 # The original version is saved in .zprofile.pysave

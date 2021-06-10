@@ -1,7 +1,13 @@
 #!/usr/bin/ruby
-#require 'pry'
+require 'pry'
+require 'Date'
 
-lines = `toggl ls -t -f project,task,description`.split("\\n")
+from=ARGV[0] ? Date.parse(ARGV[0]) : Date.today
+to=from+1
+#binding.pry
+cmd = "toggl ls -s #{from.to_s} -p #{to.to_s} -f project,task,description"
+puts cmd
+lines = `#{cmd}`.split("\\n")
 .first
 .split("\n")
 .map(&:strip)

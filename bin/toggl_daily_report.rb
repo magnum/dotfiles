@@ -7,6 +7,7 @@ to=from+1
 #binding.pry
 cmd = "toggl ls -s #{from.to_s} -p #{to.to_s} -f project,task,description"
 puts cmd
+puts "="*60
 lines = `#{cmd}`.split("\\n")
 .first
 .split("\n")

@@ -8,7 +8,7 @@
 	excludesfile = /Users/magnum/.gitignore
 	filemode = false
 	editor = /usr/bin/vim
-	autocrlf = true
+	autocrlf = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

@@ -1,3 +1,4 @@
+source ~/.profile
 #source ~/.profile
 
 # Setting PATH for Python 3.7

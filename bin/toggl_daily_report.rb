@@ -2,6 +2,8 @@
 require 'pry'
 require 'Date'
 
+(puts "toggl command not found, please install it from https://github.com/AuHau/toggl-cli" ; exit) if `command -v toggl`.empty?
+
 from=ARGV[0] ? Date.parse(ARGV[0]) : Date.today
 to=from+1
 #binding.pry

@@ -16,6 +16,8 @@ lines = `#{cmd}`.split("\\n")
 .map(&:strip)
 .map{|l| l.gsub(/\(#\d*\)/,"")}
 .map{|l| l.gsub(/[ ]{2,}/," - ")}
-.uniq[1..-1].join("\n")
+.uniq[1..-1]
+.reverse
+.join("\n")
 #binding.pry
 puts lines

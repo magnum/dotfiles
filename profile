@@ -61,8 +61,6 @@ if [ -n "$ZSH_VERSION" ]; then # assume Zsh
   source $HOME/google-cloud-sdk/completion.zsh.inc
   source $HOME/google-cloud-sdk/path.zsh.inc
 fi
-#GITHUB
-export CR_PAT=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
 # SQLITE w/ brew
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/sqlite/lib"
@@ -127,6 +125,7 @@ macnst (){
 MAMP_PHP_VERSION=php8.0.8
 MAMP_PHP_DIR=/Applications/MAMP/bin/php/$MAMP_PHP_VERSION
 export PATH=${MAMP_PHP_DIR}/bin:$PATH
+#alias php='$MAMP_PHP_DIR/bin/php -c "/Applications/MAMP/conf/$MAMP_PHP_VERSION/php.ini"'
 alias php='$MAMP_PHP_DIR/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/$MAMP_PHP_VERSION.ini"'
 alias php-config='$MAMP_PHP_DIR/bin/php-config'
 alias phpdbg='$MAMP_PHP_DIR/bin/phpdbg'

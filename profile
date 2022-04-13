@@ -8,6 +8,7 @@ export EDITOR="vim"
 # CREDENTIALS
 [ -f "$HOME/.profile_credentials" ] && source $HOME/.profile_credentials || echo "warning, .profile_credentials with secure credentials not found"
 # BREW
+export PATH="/opt/homebrew/sbin:$PATH"
 if which brew &> /dev/null; then
   export PATH="/usr/local/sbin:$PATH"
 fi
@@ -105,7 +106,6 @@ export PATH="/usr/local/opt/pcsc-lite/sbin:$PATH"
 export LDFLAGS="-L/usr/local/opt/pcsc-lite/lib"
 export CPPFLAGS="-I/usr/local/opt/pcsc-lite/include"
 export PKG_CONFIG_PATH="/usr/local/opt/pcsc-lite/lib/pkgconfig"
-
 #RVM
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
@@ -119,17 +119,30 @@ macnst (){
     netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;colred="\033[01;31m";colclr="\033[0m"; print colred "proto: " colclr $1 colred " | addr.port: " colclr $4 colred " | pid: " colclr $9 colred " | name: " colclr procname;  }' | column -t -s "|"
 }
 #echo '.profile parsed'
-
 #MAMP
 #MAMP_PHP_VERSION=php5.4.45
 MAMP_PHP_VERSION=php8.0.8
 MAMP_PHP_DIR=/Applications/MAMP/bin/php/$MAMP_PHP_VERSION
 export PATH=${MAMP_PHP_DIR}/bin:$PATH
-#alias php='$MAMP_PHP_DIR/bin/php -c "/Applications/MAMP/conf/$MAMP_PHP_VERSION/php.ini"'
-alias php='$MAMP_PHP_DIR/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/$MAMP_PHP_VERSION.ini"'
-alias php-config='$MAMP_PHP_DIR/bin/php-config'
-alias phpdbg='$MAMP_PHP_DIR/bin/phpdbg'
-alias phpize='$MAMP_PHP_DIR/bin/phpize'
-alias pear='$MAMP_PHP_DIR/bin/pear'
-alias peardev='$MAMP_PHP_DIR/bin/peardev'
-alias pecl='$MAMP_PHP_DIR/bin/pecl'
+#
+alias php='/Applications/MAMP/bin/php/php7.4.21/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/php7.4.21.ini"'
+alias php-config='/Applications/MAMP/bin/php/php7.4.21/bin/php-config'
+alias phpdbg='/Applications/MAMP/bin/php/php7.4.21/bin/phpdbg'
+alias phpize='/Applications/MAMP/bin/php/php7.4.21/bin/phpize'
+alias pear='/Applications/MAMP/bin/php/php7.4.21/bin/pear'
+alias peardev='/Applications/MAMP/bin/php/php7.4.21/bin/peardev'
+alias pecl='/Applications/MAMP/bin/php/php7.4.21/bin/pecl'
+
+#RUST
+export PATH=$PATH:/Users/magnum/.cargo/bin
+
+#OPENSSL
+#ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded.
+#
+#To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+#to your ~/.zshrc:
+#  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+#
+#Note: this may interfere with building old versions of Ruby (e.g <2.4) that use
+#OpenSSL <1.1.
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"

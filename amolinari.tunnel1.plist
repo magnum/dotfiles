@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+   <dict>
+   <key>Label</key>
+   <string>amolinari.tunnel1</string>
+   <key>ProgramArguments</key>
+   <array>
+	  <string>ssh</string>
+	  <string>-NTC</string>
+	  <string>-o ServerAliveInterval=60</string>
+	  <string>-o ExitOnForwardFailure=yes</string>
+	  <string>-i</string>
+	  <string>/Users/magnum/.ssh/id_rsa.pub</string>
+	  <string>-R 2222:localhost:22</string>
+	  <string>molinari@35.216.227.29</string>
+   </array>
+   <key>UserName</key>
+   <string>magnum</string>
+   <key>RunAtLoad</key>
+   <true/>
+   <key>KeepAlive</key>
+   <true/>
+</dict>
+</plist>

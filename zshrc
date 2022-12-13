@@ -48,9 +48,11 @@ if which antigen &> /dev/null; then
 
 fi
 
+# set history file
+# https://github.com/microsoft/vscode/issues/168396
+HISTFILE="$HOME/.zsh_history"
+
 # .profile
-source $HOME/.profile
+#source $HOME/.profile
 
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"

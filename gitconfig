@@ -43,6 +43,16 @@
 	cam = commit -a -m
 	undo = reset --hard HEAD^
 	ignore = "{ curl -L -s https://www.gitignore.io/api/ >> .gitignore ;}; gi"
+	
+	# Rebase workflow
+    	# https://softwaredoug.com/blog/2022/11/09/idiot-proof-git-aliases.html?utm_source=tldrnewsletter
+	mainbranch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
+    	synced = "!git pull origin $(git mainbranch) --rebase"
+    	update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
+    	squash = "!git rebase -v -i $(git mainbranch)"
+    	publish = push origin HEAD --force-with-lease
+    	pub = publish 
+
 [push]
 	default = matching
 
@@ -78,3 +88,5 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[commit]
+	template = /Users/magnum/.stCommitMsg

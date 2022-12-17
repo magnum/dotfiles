@@ -27,7 +27,6 @@ alias ibrew='arch -x86_64 /usr/local/bin/brew'
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
 # JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
 # AMAZON AWS
@@ -37,7 +36,8 @@ alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cl
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This 
+#loads nvm bash_completion
 # TRANSFER
 #transfer() {
 #    # write to output to tmpfile because of progress bar
@@ -61,11 +61,7 @@ export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 #export DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer
 # OTHER
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
-# GCLOUD
-if [ -n "$ZSH_VERSION" ]; then # assume Zsh
-  source $HOME/google-cloud-sdk/completion.zsh.inc
-  source $HOME/google-cloud-sdk/path.zsh.inc
-fi
+#fi
 # SQLITE w/ brew
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/sqlite/lib"
@@ -100,10 +96,6 @@ export COMPOSER_MEMORY_LIMIT=-1
 #SDKMAN
 export SDKMAN_DIR="/Users/magnum/.sdkman"
 [[ -s "/Users/magnum/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnum/.sdkman/bin/sdkman-init.sh"
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/magnum/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/magnum/google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/magnum/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/magnum/google-cloud-sdk/completion.zsh.inc'; fi
 #PCSC
 export PATH="/usr/local/opt/pcsc-lite/bin:$PATH"
 export PATH="/usr/local/opt/pcsc-lite/sbin:$PATH"
@@ -133,6 +125,7 @@ export PATH=${MAMP_PHP_DIR}/bin:$PATH
 export PATH=$PATH:/Users/magnum/.cargo/bin
 #OPENSSL
 #ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded.
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 #
 #To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
 #to your ~/.zshrc:
@@ -141,6 +134,16 @@ export PATH=$PATH:/Users/magnum/.cargo/bin
 #Note: this may interfere with building old versions of Ruby (e.g <2.4) that use
 #OpenSSL <1.1.
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+#RUBY
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+#1PASSWORD
+OP_BIOMETRIC_UNLOCK_ENABLED=true
+#GOOGLE CLOUD
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+#source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+#GIT-HUB
+#https://github.com/ingydotnet/git-hub
+source $HOME/bin/git-hub/.rc
 alias php='/Applications/MAMP/bin/php/php7.4.21/bin/php -c "/Library/Application Support/appsolute/MAMP PRO/conf/php7.4.21.ini"'
 alias php-config='/Applications/MAMP/bin/php/php7.4.21/bin/php-config'
 alias phpdbg='/Applications/MAMP/bin/php/php7.4.21/bin/phpdbg'
@@ -148,10 +151,3 @@ alias phpize='/Applications/MAMP/bin/php/php7.4.21/bin/phpize'
 alias pear='/Applications/MAMP/bin/php/php7.4.21/bin/pear'
 alias peardev='/Applications/MAMP/bin/php/php7.4.21/bin/peardev'
 alias pecl='/Applications/MAMP/bin/php/php7.4.21/bin/pecl'
-
-#RUBY
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-#GIT-HUB
-#https://github.com/ingydotnet/git-hub
-source $HOME/bin/git-hub/.rc

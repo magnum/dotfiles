@@ -1,4 +1,7 @@
+emulate sh
 source ~/.profile
+emulate zsh
+
 #source ~/.profile
 
 # Setting PATH for Python 3.7

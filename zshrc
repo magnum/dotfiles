@@ -45,14 +45,10 @@ if which antigen &> /dev/null; then
   bindkey -e
   bindkey "^[[A" history-beginning-search-backward
   bindkey "^[[B" history-beginning-search-forward
-
 fi
 
 # set history file
 # https://github.com/microsoft/vscode/issues/168396
 HISTFILE="$HOME/.zsh_history"
 
-# .profile
-#source $HOME/.profile
 
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
